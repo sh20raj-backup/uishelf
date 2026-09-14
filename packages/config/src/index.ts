@@ -64,7 +64,7 @@ export function loadConfig(cwd: string = process.cwd()): {
 }
 
 export function saveProjectConfig(
-  updates: Partial<UIShelfConfig>,
+  updates: any,
   cwd: string = process.cwd()
 ): string {
   const projectConfigPath = findProjectConfigFile(cwd) || path.join(cwd, "uishelf.json");
@@ -82,7 +82,7 @@ export function saveProjectConfig(
   return projectConfigPath;
 }
 
-export function saveGlobalConfig(updates: Partial<UIShelfConfig>): string {
+export function saveGlobalConfig(updates: any): string {
   const globalDir = path.join(os.homedir(), ".uishelf");
   if (!fs.existsSync(globalDir)) {
     fs.mkdirSync(globalDir, { recursive: true });

@@ -1,0 +1,19 @@
+{
+  "name": "uishelf",
+  "version": "0.1.0",
+  "description": "Universal React UI Registry, Discovery Engine, Compatibility Resolver, Installer & MCP Platform",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "uishelf": "./dist/bin.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/bin.js"
+  },
+  "dependencies": {
+    "@uishelf/core": "workspace:*",
+    "@uishelf/mcp": "workspace:*",
+    "commander": "^13.1.0",
+    "picocolors": "^1.1.1"
+  }
+}

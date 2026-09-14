@@ -374,7 +374,7 @@ export const SearchQuerySchema = z.object({
   limit: z.number().default(20),
   offset: z.number().default(0),
 });
-export type SearchQuery = z.infer<typeof SearchQuerySchema>;
+export type SearchQuery = z.input<typeof SearchQuerySchema>;
 
 export const SearchResultItemSchema = z.object({
   component: UIShelfComponentSchema,
