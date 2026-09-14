@@ -19,6 +19,7 @@ import { scanSourceSecurity } from "@uishelf/security";
 
 export * from "@uishelf/schema";
 export { detectProject } from "@uishelf/project";
+export { searchComponents } from "@uishelf/search";
 export { providerManager } from "@uishelf/providers";
 export { registryManager } from "@uishelf/registry";
 export { MultiTierCredentialStore } from "@uishelf/credentials";

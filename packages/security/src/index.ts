@@ -36,12 +36,16 @@ export function validateSafePath(targetPath: string, rootDir: string): PathValid
     };
   }
 
-  const normalized = path.normalize(targetPath).replace(/^(\.\.(\/|\\|$))+/, "");
-  const resolved = path.resolve(rootDir, normalized);
+  const normalized = path.normalize(targetPath);
   const normalizedRoot = path.resolve(rootDir);
+  const resolved = path.resolve(rootDir, targetPath);
 
-  // Path traversal check
-  if (!resolved.startsWith(normalizedRoot)) {
+  // Path traversal check: must not escape rootDir
+  if (
+    normalized.startsWith("..") ||
+    path.isAbsolute(targetPath) && !resolved.startsWith(normalizedRoot) ||
+    !resolved.startsWith(normalizedRoot + path.sep) && resolved !== normalizedRoot
+  ) {
     return {
       safe: false,
       normalizedPath: normalized,
