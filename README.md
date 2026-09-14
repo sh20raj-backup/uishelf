@@ -11,11 +11,19 @@
 <p align="center">
   <a href="https://github.com/SH20RAJ/uishelf/actions"><img src="https://img.shields.io/github/actions/workflow/status/SH20RAJ/uishelf/ci.yml?branch=main&style=flat-square" alt="CI Status" /></a>
   <a href="https://www.npmjs.com/package/uishelf"><img src="https://img.shields.io/npm/v/uishelf?style=flat-square&color=blue" alt="npm version" /></a>
+  <a href="https://sh20raj.github.io/uishelf/"><img src="https://img.shields.io/badge/Web_Platform-Live-00F0FF?style=flat-square&logo=googlechrome&logoColor=black" alt="Web Platform" /></a>
   <a href="https://github.com/SH20RAJ/uishelf/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" /></a>
   <a href="https://github.com/SH20RAJ/uishelf/stargazers"><img src="https://img.shields.io/github/stars/SH20RAJ/uishelf?style=flat-square" alt="GitHub Stars" /></a>
   <a href="https://github.com/SH20RAJ/uishelf/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
   <img src="https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square" alt="TypeScript" />
   <img src="https://img.shields.io/badge/shadcn-Compatible-black?style=flat-square" alt="shadcn" />
+</p>
+
+<p align="center">
+  <a href="https://sh20raj.github.io/uishelf/"><strong>🌐 Explore Live Web Catalog</strong></a> • 
+  <a href="https://sh20raj.github.io/uishelf/docs/"><strong>📚 Documentation</strong></a> • 
+  <a href="https://sh20raj.github.io/uishelf/compare/"><strong>⚖️ Compare UI Systems</strong></a> • 
+  <a href="https://sh20raj.github.io/uishelf/mcp/"><strong>🤖 MCP Server Guide</strong></a>
 </p>
 
 ---
@@ -187,6 +195,30 @@ Exposed MCP Tools:
 - `get_install_plan`: Non-destructive install plan calculation
 - `install_component`: Transactional installation with confirmation
 - `doctor`: Project and provider health diagnostics
+
+---
+
+## 📦 Modular Packages on NPM
+
+All packages are published under the `@uishelf` scope and the main `uishelf` CLI on the npm registry:
+
+| Package | Version | Description |
+|---|---|---|
+| [`uishelf`](https://www.npmjs.com/package/uishelf) | `0.1.0` | Production CLI, terminal UX, and stdio MCP command |
+| [`@uishelf/core`](https://www.npmjs.com/package/@uishelf/core) | `0.1.0` | Central orchestration engine uniting all packages |
+| [`@uishelf/schema`](https://www.npmjs.com/package/@uishelf/schema) | `0.1.0` | Canonical Zod schemas & TypeScript definitions |
+| [`@uishelf/project`](https://www.npmjs.com/package/@uishelf/project) | `0.1.0` | React 18/19, Next.js 14/15, Tailwind v3/v4 detector |
+| [`@uishelf/search`](https://www.npmjs.com/package/@uishelf/search) | `0.1.0` | Zero-API-key BM25 + fuzzy hybrid search engine |
+| [`@uishelf/resolver`](https://www.npmjs.com/package/@uishelf/resolver) | `0.1.0` | Dependency resolution & multi-variant routing engine |
+| [`@uishelf/ranking`](https://www.npmjs.com/package/@uishelf/ranking) | `0.1.0` | 9-factor transparent scoring algorithm |
+| [`@uishelf/registry`](https://www.npmjs.com/package/@uishelf/registry) | `0.1.0` | Official shadcn registry synchronizer & seed catalog |
+| [`@uishelf/providers`](https://www.npmjs.com/package/@uishelf/providers) | `0.1.0` | Pluggable provider system (shadcn, 21st, Ruixen, etc.) |
+| [`@uishelf/installer`](https://www.npmjs.com/package/@uishelf/installer) | `0.1.0` | Transactional planner with backup & rollback safety |
+| [`@uishelf/security`](https://www.npmjs.com/package/@uishelf/security) | `0.1.0` | Path traversal guard & AST safety validator |
+| [`@uishelf/credentials`](https://www.npmjs.com/package/@uishelf/credentials) | `0.1.0` | Secret store with on-demand auth & redaction |
+| [`@uishelf/config`](https://www.npmjs.com/package/@uishelf/config) | `0.1.0` | Hierarchical configuration manager (`uishelf.json`) |
+| [`@uishelf/cache`](https://www.npmjs.com/package/@uishelf/cache) | `0.1.0` | Fast filesystem & memory caching with offline support |
+| [`@uishelf/mcp`](https://www.npmjs.com/package/@uishelf/mcp) | `0.1.0` | Stdio Model Context Protocol (MCP) server |
 
 ---
 

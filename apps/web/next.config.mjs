@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_ACTIONS === "true" || process.env.DEPLOY_TARGET === "gh-pages";
+const basePath = isGithubPages ? "/uishelf" : "";
+
 const nextConfig = {
+  output: "export",
+  basePath: basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+  trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+  images: {
+    unoptimized: true,
+  },
   transpilePackages: [
     "@uishelf/core",
     "@uishelf/schema",

@@ -9,7 +9,7 @@ export function Footer() {
         <div className="col-span-2">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-7 h-7 rounded-md overflow-hidden border border-cyan-500/30">
-              <img src="/logo.jpg" alt="UIShelf Logo" className="w-full h-full object-cover" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.jpg`} alt="UIShelf Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-lg font-bold text-white tracking-tight">UIShelf</span>
           </div>

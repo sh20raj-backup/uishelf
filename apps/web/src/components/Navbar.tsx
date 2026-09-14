@@ -23,7 +23,7 @@ export function Navbar() {
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg overflow-hidden border border-cyan-500/30 shadow-[0_0_15px_rgba(0,240,255,0.3)] group-hover:scale-105 transition-transform">
-              <img src="/logo.jpg" alt="UIShelf Logo" className="w-full h-full object-cover" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.jpg`} alt="UIShelf Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
               UIShelf
