@@ -18,6 +18,75 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@22.20.2)
 
+  packages/cache:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/config:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/core:
+    dependencies:
+      '@uishelf/cache':
+        specifier: workspace:*
+        version: link:../cache
+      '@uishelf/config':
+        specifier: workspace:*
+        version: link:../config
+      '@uishelf/credentials':
+        specifier: workspace:*
+        version: link:../credentials
+      '@uishelf/installer':
+        specifier: workspace:*
+        version: link:../installer
+      '@uishelf/project':
+        specifier: workspace:*
+        version: link:../project
+      '@uishelf/providers':
+        specifier: workspace:*
+        version: link:../providers
+      '@uishelf/ranking':
+        specifier: workspace:*
+        version: link:../ranking
+      '@uishelf/registry':
+        specifier: workspace:*
+        version: link:../registry
+      '@uishelf/resolver':
+        specifier: workspace:*
+        version: link:../resolver
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@uishelf/search':
+        specifier: workspace:*
+        version: link:../search
+      '@uishelf/security':
+        specifier: workspace:*
+        version: link:../security
+
+  packages/credentials:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/installer:
+    dependencies:
+      '@uishelf/project':
+        specifier: workspace:*
+        version: link:../project
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@uishelf/security':
+        specifier: workspace:*
+        version: link:../security
+
   packages/project:
     dependencies:
       '@uishelf/schema':
@@ -27,11 +96,71 @@ importers:
         specifier: ^3.24.1
         version: 3.25.76
 
+  packages/providers:
+    dependencies:
+      '@uishelf/credentials':
+        specifier: workspace:*
+        version: link:../credentials
+      '@uishelf/ranking':
+        specifier: workspace:*
+        version: link:../ranking
+      '@uishelf/registry':
+        specifier: workspace:*
+        version: link:../registry
+      '@uishelf/resolver':
+        specifier: workspace:*
+        version: link:../resolver
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/ranking:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/registry:
+    dependencies:
+      '@uishelf/cache':
+        specifier: workspace:*
+        version: link:../cache
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@uishelf/security':
+        specifier: workspace:*
+        version: link:../security
+
+  packages/resolver:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@uishelf/security':
+        specifier: workspace:*
+        version: link:../security
+
   packages/schema:
     dependencies:
       zod:
         specifier: ^3.24.1
         version: 3.25.76
+
+  packages/search:
+    dependencies:
+      '@uishelf/ranking':
+        specifier: workspace:*
+        version: link:../ranking
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
+
+  packages/security:
+    dependencies:
+      '@uishelf/schema':
+        specifier: workspace:*
+        version: link:../schema
 
 packages:
 

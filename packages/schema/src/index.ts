@@ -69,7 +69,7 @@ export type AuthRequirement = z.infer<typeof AuthRequirementSchema>;
 export const ComponentFileSchema = z.object({
   path: z.string(),
   content: z.string().optional(),
-  type: z.string().default("registry:ui"),
+  type: z.string().optional(),
   target: z.string().optional(),
 });
 export type ComponentFile = z.infer<typeof ComponentFileSchema>;
