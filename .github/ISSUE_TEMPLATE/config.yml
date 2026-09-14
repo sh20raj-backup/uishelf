@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 Ask a Question & Join Discussions"
+    url: "https://github.com/SH20RAJ/uishelf/discussions"
+    about: "Have a question, feedback, or need help integrating UIShelf? Ask in GitHub Discussions."
+  - name: "🔒 Report a Security Vulnerability"
+    url: "https://github.com/SH20RAJ/uishelf/security/policy"
+    about: "Please read our security policy for private vulnerability reporting."

@@ -222,6 +222,23 @@ All packages are published under the `@uishelf` scope and the main `uishelf` CLI
 
 ---
 
+## 🤝 Contributing & Community
+
+We warmly welcome community contributions, provider adapters, bug fixes, and feature proposals!
+
+- 📖 Read our [Contributing Guide](CONTRIBUTING.md) to set up your local development environment.
+- 📜 Review our [Code of Conduct](CODE_OF_CONDUCT.md) for community standards.
+- 💡 Have an idea for a new UI Provider? [Request a Provider](https://github.com/SH20RAJ/uishelf/issues/new?template=provider_request.yml) or open a PR.
+- 💬 Join the conversation on [GitHub Discussions](https://github.com/SH20RAJ/uishelf/discussions).
+
+---
+
+## 🛡️ Security
+
+Security and code safety are top priorities. Please review our [Security Policy](SECURITY.md) to report vulnerabilities privately or learn about our static AST safety checks.
+
+---
+
 ## 📄 License
 
 MIT © [Shaswat Raj](https://github.com/SH20RAJ)

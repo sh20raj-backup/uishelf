@@ -1,0 +1,53 @@
+name: "🔌 New UI Provider / Registry Request"
+description: "Request integration of a new React UI component library or shadcn registry"
+title: "[Provider]: "
+labels: ["provider", "integration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Want UIShelf to support a new React UI library, copy-paste registry, or design system? Fill out the details below!
+  - type: input
+    id: provider_name
+    attributes:
+      label: Provider / Library Name
+      placeholder: "e.g. Origin UI, Float UI, NextUI"
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website or Documentation URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: GitHub Repository
+      placeholder: "https://github.com/..."
+    validations:
+      required: true
+  - type: dropdown
+    id: registry_type
+    attributes:
+      label: Registry Format
+      options:
+        - "Official shadcn Registry (r/{name}.json)"
+        - "CLI based (custom CLI command)"
+        - "Copy-paste source code"
+        - "npm package library"
+        - "Other / Unknown"
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Stack Compatibility
+      description: Does it support Tailwind CSS (v3 or v4), React 19, Radix UI, Base UI, Motion?
+  - type: checkboxes
+    id: willing_to_contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to submit a PR to add this provider adapter!

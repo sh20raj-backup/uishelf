@@ -1,0 +1,58 @@
+name: "🐛 Bug Report"
+description: "File a bug report to help us improve UIShelf"
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please search existing issues first before submitting a duplicate.
+  - type: input
+    id: version
+    attributes:
+      label: UIShelf Version
+      description: What version of `uishelf` or `@uishelf/*` are you running? (Run `uishelf --version`)
+      placeholder: "e.g. 0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating System & Node Version
+      description: Your environment details (Run `node -v` and OS)
+      placeholder: "e.g. macOS Sequoia 15.1, Node.js 20.18.0, pnpm 9.14.0"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps or command executed to reproduce the issue.
+      placeholder: |
+        1. Run 'uishelf add @shadcn/button'
+        2. In a project with Next.js 15 and Tailwind v4
+        3. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Log Output
+      description: Please copy and paste any relevant terminal output or doctor diagnostics (`uishelf doctor`).
+      render: shell
+  - type: checkboxes
+    id: validations
+    attributes:
+      label: Check before submitting
+      options:
+        - label: I have searched existing issues and confirmed this is not a duplicate.
+          required: true
+        - label: I have read the Contributing Guide and Security Policy.
+          required: true
