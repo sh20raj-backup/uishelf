@@ -55,22 +55,49 @@ export class UIShelfCore {
     const project = this.getProjectContext();
     const { config } = loadConfig(this.cwd);
 
-    let allComponents = await registryManager.getComponents();
+    // 1. Filter active providers based on config allowlist / denylist and query filters
+    const providers = providerManager.list().filter((p) => {
+      if (config.providers.mode === "allowlist" && config.providers.include.length > 0) {
+        if (!config.providers.include.includes(p.id)) return false;
+      } else if (config.providers.mode === "denylist" && config.providers.exclude.length > 0) {
+        if (config.providers.exclude.includes(p.id)) return false;
+      }
+      if (query.providers && query.providers.length > 0) {
+        if (!query.providers.map((x) => x.toLowerCase()).includes(p.id.toLowerCase())) {
+          return false;
+        }
+      }
+      if (query.excludeProviders && query.excludeProviders.length > 0) {
+        if (query.excludeProviders.map((x) => x.toLowerCase()).includes(p.id.toLowerCase())) {
+          return false;
+        }
+      }
+      return true;
+    });
 
-    // Apply provider mode from config (allowlist/denylist)
-    if (config.providers.mode === "allowlist" && config.providers.include.length > 0) {
-      allComponents = allComponents.filter((c) =>
-        config.providers.include.includes(c.providerId)
-      );
-    } else if (config.providers.mode === "denylist" && config.providers.exclude.length > 0) {
-      allComponents = allComponents.filter(
-        (c) => !config.providers.exclude.includes(c.providerId)
-      );
+    // 2. Query all providers in parallel as a dynamic proxy aggregator
+    const settled = await Promise.allSettled(providers.map((p) => p.search(query)));
+    const allComponents: UIShelfComponent[] = [];
+    for (const res of settled) {
+      if (res.status === "fulfilled") {
+        allComponents.push(...res.value);
+      }
     }
 
+    // 3. Deduplicate across platforms by component id
+    const seen = new Set<string>();
+    const catalog: UIShelfComponent[] = [];
+    for (const comp of allComponents) {
+      if (!seen.has(comp.id)) {
+        seen.add(comp.id);
+        catalog.push(comp);
+      }
+    }
+
+    // 4. Score, rank, and filter against project compatibility
     return internalSearch({
       query,
-      catalog: allComponents,
+      catalog,
       project,
     });
   }

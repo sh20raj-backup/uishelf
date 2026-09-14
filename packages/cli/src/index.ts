@@ -359,20 +359,62 @@ export function createCli(): Command {
   // 8. providers
   const providersCmd = program.command("providers").description("Manage and inspect providers");
 
-  providersCmd
-    .command("list")
-    .description("List all active providers")
-    .action(async () => {
-      const providers = await providerManager.list();
-      console.log(pc.bold(`\n▲ Active Providers (${providers.length} registered):\n`));
-      for (const p of providers) {
-        const meta = await p.discover();
-        const auth = meta.authRequired ? pc.yellow("🔐 Auth") : pc.green("✓ Public");
-        console.log(`• ${pc.bold(meta.name)} ${pc.cyan(`(${meta.id})`)} - ${meta.type} [${auth}]`);
-        console.log(`  ${pc.gray(meta.description)}`);
+  const listProvidersAction = async (opts: { json?: boolean } = {}) => {
+    const providers = await providerManager.list();
+    const list = [];
+    for (const p of providers) {
+      list.push(await p.discover());
+    }
+
+    if (opts.json) {
+      console.log(JSON.stringify(list, null, 2));
+      return;
+    }
+
+    console.log(pc.bold(pc.cyan(`\n▲ Supported Libraries & Discovery Ecosystem (${list.length} platforms):\n`)));
+
+    list.forEach((meta, idx) => {
+      const num = pc.gray(`${idx + 1}.`);
+      const auth = meta.authRequired ? pc.yellow("🔐 Auth Required") : pc.green("✓ Public (Zero API Key)");
+      const trust = pc.blue(`[${meta.trustLevel}]`);
+
+      console.log(`${num} ${pc.bold(pc.white(meta.name))} ${pc.cyan(`(${meta.id})`)} ${trust} ${auth}`);
+      console.log(`   ${pc.gray(meta.description)}`);
+      
+      if (meta.searchMethod || meta.searchEndpoint) {
+        console.log(`   ${pc.dim("Search Way:")}     ${pc.cyan(meta.searchMethod || "Dynamic API")} ${meta.searchEndpoint ? pc.gray(`(${meta.searchEndpoint})`) : ""}`);
+      }
+      if (meta.installCommandTemplate) {
+        console.log(`   ${pc.dim("Install in BG:")}  ${pc.yellow(meta.installCommandTemplate)}`);
+      }
+      if (meta.supportedStacks && meta.supportedStacks.length > 0) {
+        console.log(`   ${pc.dim("Stacks:")}         ${pc.green(meta.supportedStacks.join(" · "))}`);
+      }
+      if (meta.features && meta.features.length > 0) {
+        console.log(`   ${pc.dim("Features:")}       ${pc.magenta(meta.features.join(" · "))}`);
       }
       console.log();
     });
+
+    console.log(pc.gray(`All libraries install uniformly via: ${pc.cyan("uishelf add <component-id>")}\n`));
+  };
+
+  providersCmd
+    .command("list")
+    .description("List all active providers, search ways, background install commands, and stack capabilities")
+    .option("--json", "Output machine-readable JSON")
+    .action(listProvidersAction);
+
+  providersCmd
+    .option("--json", "Output machine-readable JSON")
+    .action(listProvidersAction);
+
+  // Top-level shortcut alias: uishelf libs
+  program
+    .command("libs")
+    .description("Shortcut to list all supported libraries and platforms")
+    .option("--json", "Output machine-readable JSON")
+    .action(listProvidersAction);
 
   providersCmd
     .command("sync")

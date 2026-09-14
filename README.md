@@ -26,12 +26,18 @@
   <a href="https://sh20raj.github.io/uishelf/mcp/"><strong>🤖 MCP Server Guide</strong></a>
 </p>
 
+<p align="center">
+  <img src="./assets/demo.gif" alt="UIShelf CLI Interactive Demo" width="100%" />
+</p>
+
 ---
 
 ## 💡 What is UIShelf?
 
 **UIShelf is NOT another UI component library.**  
-UIShelf is the **resolution layer** between developers and the entire React UI ecosystem.
+UIShelf is the **resolution layer and universal discovery engine** between developers and the entire React UI ecosystem.
+
+Rather than maintaining a hardcoded catalog, UIShelf operates as a **dynamic multi-platform aggregator and search proxy**. When you search, it queries remote platforms concurrently using their native schemas and endpoints. When you install, it executes their upstream CLI commands in the background while giving you a single, unified `uishelf add` interface!
 
 > **Core Promise**:  
 > Search every great UI source → Understand compatibility → Preview & inspect → Choose the best component → Install safely.
@@ -43,108 +49,37 @@ Everything runs on the exact same core engine across all interfaces:
 
 ---
 
-## 🚀 Quick Start
+## ⚡ Dynamic Multi-Platform Aggregation & Background Execution
 
-### 1. Zero-Config Project Discovery
-Run UIShelf inside any React / Next.js / Vite project:
-
-```bash
-npx uishelf
-```
-
-UIShelf scans your stack:
-```text
-Scanning project...
-✓ Next.js 15.1
-✓ React 19
-✓ Tailwind CSS v4
-✓ shadcn detected (components/ui)
-✓ Motion v12 ready
-Syncing public registries...
-✓ 340+ providers indexed
-UIShelf is ready.
-```
-
-### 2. Search Components Across Ecosystems
-
-```bash
-uishelf search "animated pricing"
-```
-
-Output:
-```text
-1  Magic UI / Animated Pricing Section   96  SaaS pricing with animated monthly/annual billing toggle
-   Tailwind 4 · Next.js · shadcn ✓ · Motion ✓
-   Why: Exact semantic match · Motion already installed · Fully accessible
-
-2  Ruixen UI / Pricing Table             94  Responsive pricing grid with Base UI & Tailwind 4
-   Tailwind 4 · Next.js · shadcn ✓ · Base UI
-   Why: Base UI variant matched · No auth required
-
-3  21st / Glassmorphic Pricing Card      93  Frosted glass pricing tier with subtle particle glow
-   Tailwind · Next.js · 🔐 21st Auth Required
-```
-
-### 3. Safe, Dry-Run Installation
-
-```bash
-# Preview changes without modifying files:
-uishelf add @magic-ui/magic-card --dry-run
-```
-
-```text
-Install Plan:
-Component: Magic UI / Magic Card
-Files:
-  + components/ui/magic-card.tsx (sha256:8f4c2e...)
-Packages:
-  + motion (^12.0.0)
-Registry dependencies:
-  none
-Potential conflicts:
-  none
-No files were modified. (dry-run mode)
-```
-
-To install for real:
-```bash
-uishelf add @magic-ui/magic-card
-```
+1. **Remote Search Proxy**: Searching e.g. `uishelf search button` queries official shadcn registries (`/r/index.json`), Magic UI, Aceternity, 21st, React Bits, Ruixen, Cult UI, ReUI, Kokonut UI, and NPM package registries in parallel with an automatic 2.5s network timeout and instant local caching.
+2. **Unified Developer Interface**: You only ever need to run:
+   ```bash
+   uishelf add <component-id>
+   ```
+3. **Native Commands Run in Background**: UIShelf runs the upstream provider's native command in the background (`npx shadcn@latest add ...`, `pnpm add @mui/material ...`, `npx 21st@latest add ...`) adapted to your package manager (`pnpm dlx`, `bunx --bun`, or `npx`).
+4. **Automatic Transactional Fallback**: If the upstream CLI tool fails or if you are offline, UIShelf automatically falls back to its built-in transactional file and dependency installer, ensuring installations never fail!
 
 ---
 
-## 🌟 Key Features
+## 📦 Supported Libraries & Discovery Matrix
 
-- 🔍 **Hybrid BM25 & Fuzzy Search**: Sub-millisecond search across thousands of components. Works 100% offline with zero external API keys!
-- 🧩 **Stack-Aware Resolution**: Detects your exact stack (Tailwind v3 vs v4, Radix vs Base UI, React 18 vs 19) and picks the matching variant. E.g., Ruixen UI multi-variant routing is handled automatically.
-- 📊 **Transparent 9-Factor Quality Score**: Every result explains *why* it got its score based on Compatibility (20%), Code Quality (15%), Accessibility (15%), Maintenance (10%), Docs (10%), Performance (10%), Dependency Health (10%), Popularity (5%), and Preview Quality (5%).
-- 🛡️ **Transactional Installation & Rollback**: Backs up target files before writing. If package installation fails, changes are cleanly reverted.
-- 🔒 **uishelf.lock**: Reproducible provenance tracking, recording upstream provider, registry version, and SHA-256 integrity hashes.
-- 🔑 **Strict On-Demand Auth**: Public components never ask for credentials. Keys (e.g. `API_KEY_21ST`, `REACTBITS_LICENSE_KEY`) are requested strictly when you target a private or Pro component.
-- 🩺 **Doctor (`uishelf doctor`)**: Probes project framework, Tailwind config, aliases, design system duplication, and provider health.
-- 🤖 **Native MCP Server (`uishelf mcp`)**: Seamlessly connects your IDE agent to the registry with read and write safeguards.
+Inspect all supported libraries directly in your terminal via `uishelf providers list` or `uishelf libs`:
 
----
-
-## 📦 Supported Ecosystems & Providers
-
-UIShelf dynamically discovers and indexes all **340+ official shadcn registries** (`https://ui.shadcn.com/r/registries.json`), plus curated adapters:
-
-| Provider | Type | Install Mode | Auth Requirement |
-|---|---|---|---|
-| **shadcn/ui** | Registry | `npx shadcn add` | Public (None) |
-| **Magic UI** | Registry | `@magic-ui/*` | Public (None) |
-| **Aceternity UI** | Registry | `@aceternity/*` | Public (None) |
-| **Ruixen UI** | Multi-Variant | TW3/TW4 & Radix/BaseUI | Public (None) |
-| **React Bits** | Registry | Free / Pro | `REACTBITS_LICENSE_KEY` (Pro only) |
-| **21st** | CLI | `21st add` | `API_KEY_21ST` (On install) |
-| **Cult UI** | Registry | `@cult-ui/*` | Public (None) |
-| **ReUI** | Registry | Free / Pro | `REUI_LICENSE_KEY` (Pro only) |
-| **Animate UI** | Registry | `@animate-ui/*` | Public (None) |
-| **Kokonut UI** | Registry | `@kokonutui/*` | Public (None) |
-| **MUI (Material UI)** | Package Library | `npm i @mui/material` | Package based |
-| **Mantine** | Package Library | `npm i @mantine/core` | Package based |
-| **Chakra UI** | Package Library | `npm i @chakra-ui/react` | Package based |
+| Library / Registry | Type | Search Schema / Endpoint | Background Install Command | Stacks Supported | Key Capabilities |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **shadcn/ui** | `shadcn-registry` | Remote Index (`https://ui.shadcn.com/r/index.json`) | `npx shadcn@latest add {name} --yes` | Tailwind v3/v4, React 19, Radix | WAI-ARIA Accessible, Zero-runtime CSS |
+| **Magic UI** | `shadcn-registry` | Remote Index (`https://magicui.design/r/index.json`) | `npx shadcn@latest add "https://magicui.design/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Motion | 200+ Animated items, Canvas shaders, Bento |
+| **Aceternity UI** | `shadcn-registry` | Remote Index (`https://ui.aceternity.com/r/index.json`) | `npx shadcn@latest add "https://ui.aceternity.com/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Motion | Radiant Hero sections, 3D Pin, Lamp effect |
+| **21st.dev** | `cli` | Marketplace API (`https://21st.dev/api/registry/index`) | `npx 21st@latest add {name}` | Tailwind v3/v4, React 19, Motion | Marketplace, Creator registry, Multi-style |
+| **React Bits** | `shadcn-registry` | Remote Index (`https://reactbits.dev/r/index.json`) | `npx shadcn@latest add "https://reactbits.dev/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Motion | Physics text, Magnetic cursor, Ballpit |
+| **Ruixen UI** | `shadcn-registry` | Multi-Stack API (`https://ruixen.com/r/index.json`) | `npx shadcn@latest add "https://ruixen.com/r/{name}" --yes` | Tailwind v4/v3, Radix, Base UI | Multi-stack variant selector |
+| **Cult UI** | `shadcn-registry` | Remote Index (`https://cult-ui.com/r/index.json`) | `npx shadcn@latest add "https://cult-ui.com/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Motion | Tactile neumorphism, Cyberpunk blocks |
+| **ReUI** | `shadcn-registry` | Remote Index (`https://reui.io/r/index.json`) | `npx shadcn@latest add "https://reui.io/r/{name}.json" --yes` | Tailwind v3/v4, React 19 | SaaS hero blocks, Notification banners |
+| **Animate UI** | `shadcn-registry` | Remote Index (`https://animate-ui.com/r/index.json`) | `npx shadcn@latest add "https://animate-ui.com/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Motion | Spring physics primitives, Morphing dialogs |
+| **Kokonut UI** | `shadcn-registry` | Remote Index (`https://kokonutui.com/r/index.json`) | `npx shadcn@latest add "https://kokonutui.com/r/{name}.json" --yes` | Tailwind v3/v4, React 19, Lucide | AI prompt inputs, Interactive commands |
+| **MUI (Material UI)** | `package-library` | NPM Search API (`@mui/material`) | `pnpm add @mui/material @emotion/react @emotion/styled` | Emotion, MUI System, React 18/19 | Google Material Design 3, DataGrid |
+| **Mantine** | `package-library` | NPM Search API (`@mantine/core`) | `pnpm add @mantine/core @mantine/hooks` | PostCSS, CSS Modules, React 18/19 | 100+ components, 50+ hooks, Dark theme |
+| **Chakra UI** | `package-library` | NPM Search API (`@chakra-ui/react`) | `pnpm add @chakra-ui/react @emotion/react` | Emotion, React 18/19 | Style props DX, Accessible WAI-ARIA |
 
 ---
 

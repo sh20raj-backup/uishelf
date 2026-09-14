@@ -17,6 +17,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 65,
     variants: ["default", "new-york"],
     prerequisites: ["Tailwind CSS", "Radix Primitives"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://ui.shadcn.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add {name} --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Radix Primitives"],
+    features: ["WAI-ARIA accessible", "Copy-paste architecture", "Zero runtime CSS", "TypeScript"],
   },
   {
     id: "magic-ui",
@@ -34,6 +39,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 140,
     variants: [],
     prerequisites: ["Tailwind CSS", "Motion"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://magicui.design/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://magicui.design/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["200+ Animated components", "Glow & Spotlight effects", "Canvas shaders", "Bento grids"],
   },
   {
     id: "aceternity",
@@ -51,6 +61,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 95,
     variants: [],
     prerequisites: ["Tailwind CSS", "Motion"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://ui.aceternity.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://ui.aceternity.com/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["Radiant Hero sections", "3D Pin & Sparkles", "Lamp lighting effect", "GPU accelerated shaders"],
   },
   {
     id: "21st",
@@ -68,6 +83,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 2200,
     variants: [],
     prerequisites: ["21st CLI", "API Key"],
+    searchMethod: "Marketplace API & Registry Index",
+    searchEndpoint: "https://21st.dev/api/registry/index",
+    installCommandTemplate: "npx 21st@latest add {name}",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["Community marketplace", "Creator monetization", "CLI multi-style", "Instant previews"],
   },
   {
     id: "react-bits",
@@ -84,6 +104,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 85,
     variants: ["free", "pro"],
     prerequisites: ["Tailwind CSS", "Motion"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://reactbits.dev/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://reactbits.dev/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["Physics text animations", "Magnetic cursor effects", "Hyperspeed canvas", "Ballpit simulation"],
   },
   {
     id: "ruixen",
@@ -100,6 +125,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 110,
     variants: ["radix-tw4", "radix-tw3", "baseui-tw4", "baseui-tw3"],
     prerequisites: ["Tailwind CSS"],
+    searchMethod: "Multi-Stack Registry API",
+    searchEndpoint: "https://ruixen.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://ruixen.com/r/{name}\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "Radix UI", "Base UI", "React 19"],
+    features: ["Multi-stack variant selector", "Radix & Base UI interchangeable", "Tailwind 3 & 4 compatible"],
   },
   {
     id: "cult-ui",
@@ -116,6 +146,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 45,
     variants: [],
     prerequisites: ["Tailwind CSS", "Motion"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://cult-ui.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://cult-ui.com/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["Tactile neumorphism", "Cyberpunk interfaces", "Dynamic audio/haptics", "Creative web blocks"],
   },
   {
     id: "reui",
@@ -132,6 +167,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 70,
     variants: ["free", "pro"],
     prerequisites: ["Tailwind CSS"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://reui.io/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://reui.io/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19"],
+    features: ["SaaS hero blocks", "Conversion announcement banners", "Micro-feedback buttons"],
   },
   {
     id: "animate-ui",
@@ -148,6 +188,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 60,
     variants: [],
     prerequisites: ["Tailwind CSS", "Motion"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://animate-ui.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://animate-ui.com/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Motion"],
+    features: ["Spring physics primitives", "Morphing modal dialogs", "Micro-interaction triggers"],
   },
   {
     id: "kokonut",
@@ -164,6 +209,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 50,
     variants: [],
     prerequisites: ["Tailwind CSS", "Lucide Icons"],
+    searchMethod: "Remote Registry Index (JSON)",
+    searchEndpoint: "https://kokonutui.com/r/index.json",
+    installCommandTemplate: "npx shadcn@latest add \"https://kokonutui.com/r/{name}.json\" --yes",
+    supportedStacks: ["Tailwind v4", "Tailwind v3", "React 19", "Lucide Icons"],
+    features: ["AI prompt inputs", "Interactive command bars", "Dashboard widgets", "Card carousels"],
   },
   {
     id: "mui",
@@ -179,6 +229,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 80,
     variants: [],
     prerequisites: ["@mui/material", "@emotion/react", "@emotion/styled"],
+    searchMethod: "NPM Registry Search API & Package Manifest",
+    searchEndpoint: "https://registry.npmjs.org/-/v1/search?text=@mui/material",
+    installCommandTemplate: "pnpm add @mui/material @emotion/react @emotion/styled",
+    supportedStacks: ["Emotion", "MUI System", "React 18/19", "TypeScript"],
+    features: ["Google Material Design 3", "Enterprise DataGrid", "Comprehensive form controls", "Deep theming"],
   },
   {
     id: "mantine",
@@ -194,6 +249,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 100,
     variants: [],
     prerequisites: ["@mantine/core", "@mantine/hooks", "PostCSS"],
+    searchMethod: "NPM Registry Search API & Package Manifest",
+    searchEndpoint: "https://registry.npmjs.org/-/v1/search?text=@mantine/core",
+    installCommandTemplate: "pnpm add @mantine/core @mantine/hooks",
+    supportedStacks: ["PostCSS", "CSS Modules", "React 18/19", "TypeScript"],
+    features: ["100+ components", "50+ custom hooks", "Zero runtime CSS overhead", "Native dark theme"],
   },
   {
     id: "chakra",
@@ -209,6 +269,11 @@ export const CURATED_PROVIDERS: ProviderMetadata[] = [
     componentCount: 75,
     variants: [],
     prerequisites: ["@chakra-ui/react", "@emotion/react", "Node 20+"],
+    searchMethod: "NPM Registry Search API & Package Manifest",
+    searchEndpoint: "https://registry.npmjs.org/-/v1/search?text=@chakra-ui/react",
+    installCommandTemplate: "pnpm add @chakra-ui/react @emotion/react",
+    supportedStacks: ["Emotion", "React 18/19", "TypeScript"],
+    features: ["Style props DX", "Accessible WAI-ARIA", "Composable layouts", "Flexible theming"],
   },
 ];
 
@@ -1367,4 +1432,1284 @@ export { Button, buttonVariants };`,
       },
     ],
   },
+
+  // 14. Magic UI / Shimmer Button
+  {
+    id: "@magic-ui/shimmer-button",
+    provenance: { provider: "Magic UI", sourceUrl: "https://magicui.design/docs/components/shimmer-button", license: "MIT" },
+    providerId: "magic-ui",
+    providerItemId: "shimmer-button",
+    name: "shimmer-button",
+    title: "Shimmer Button",
+    description: "A dynamic, high-performance button with a moving iridescent shimmer border animation.",
+    type: "component",
+    categories: ["buttons", "effects", "animations"],
+    tags: ["button", "shimmer", "glow", "animated", "magic-ui", "tailwind"],
+    preview: {
+      demoUrl: "https://magicui.design/docs/components/shimmer-button",
+      image: "https://magicui.design/preview/shimmer-button.png",
+    },
+    source: {
+      homepage: "https://magicui.design",
+      registryUrl: "https://magicui.design/r/shimmer-button.json",
+      repository: "https://github.com/magicuidesign/magicui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @magic-ui/shimmer-button",
+    },
+    dependencies: [{ name: "clsx", version: "^2.1.1", isDev: false, peer: false }, { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false }],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 97,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 15,
+        maintenance: 10,
+        documentation: 10,
+        performance: 10,
+        reasons: [
+          "Pure CSS hardware accelerated keyframes",
+          "Zero motion runtime dependency needed",
+          "Fully typed TypeScript interface",
+        ],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/shimmer-button.tsx",
+        content: `import React, { CSSProperties } from "react";
+import { cn } from "@/lib/utils";
+
+export interface ShimmerButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  shimmerColor?: string;
+  shimmerSize?: string;
+  borderRadius?: string;
+  shimmerDuration?: string;
+  background?: string;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
+  (
+    {
+      shimmerColor = "#ffffff",
+      shimmerSize = "0.05em",
+      shimmerDuration = "3s",
+      borderRadius = "100px",
+      background = "rgba(0, 0, 0, 1)",
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        style={
+          {
+            "--spread": "90deg",
+            "--shimmer-color": shimmerColor,
+            "--radius": borderRadius,
+            "--speed": shimmerDuration,
+            "--cut": shimmerSize,
+            "--bg": background,
+          } as CSSProperties
+        }
+        className={cn(
+          "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 text-white [background:var(--bg)] [border-radius:var(--radius)] dark:text-black",
+          "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px",
+          className
+        )}
+        {...props}
+      >
+        {/* spark container */}
+        <div
+          className={cn(
+            "-z-30 blur-[2px]",
+            "absolute inset-0 overflow-visible [container-type:size]"
+          )}
+        >
+          {/* spark */}
+          <div className="absolute inset-0 h-[100cqh] animate-shimmer-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
+            {/* spark before */}
+            <div className="animate-spin-around absolute -inset-full w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]" />
+          </div>
+        </div>
+        {children}
+
+        {/* Backdrop */}
+        <div
+          className={cn(
+            "insert-0 absolute size-full",
+            "rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
+            "transform-gpu transition-all duration-300 ease-in-out",
+            "group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]",
+            "group-active:shadow-[inset_0_-10px_10px_#ffffff3f]"
+          )}
+        />
+
+        {/* backdrop */}
+        <div
+          className={cn(
+            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
+          )}
+        />
+      </button>
+    );
+  }
+);
+ShimmerButton.displayName = "ShimmerButton";
+export default ShimmerButton;`,
+      },
+    ],
+  },
+
+  // 15. Magic UI / Interactive Hover Button
+  {
+    id: "@magic-ui/interactive-hover-button",
+    provenance: { provider: "Magic UI", sourceUrl: "https://magicui.design/docs/components/interactive-hover-button", license: "MIT" },
+    providerId: "magic-ui",
+    providerItemId: "interactive-hover-button",
+    name: "interactive-hover-button",
+    title: "Interactive Hover Button",
+    description: "An animated button with a sliding text indicator and expanding dot transition on hover.",
+    type: "component",
+    categories: ["buttons", "animations", "micro-interactions"],
+    tags: ["button", "hover", "interactive", "animation", "magic-ui"],
+    preview: {
+      demoUrl: "https://magicui.design/docs/components/interactive-hover-button",
+      image: "https://magicui.design/preview/interactive-hover-button.png",
+    },
+    source: {
+      homepage: "https://magicui.design",
+      registryUrl: "https://magicui.design/r/interactive-hover-button.json",
+      repository: "https://github.com/magicuidesign/magicui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @magic-ui/interactive-hover-button",
+    },
+    dependencies: [
+      { name: "lucide-react", version: "^0.468.0", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 95,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 14,
+        maintenance: 10,
+        documentation: 10,
+        performance: 10,
+        reasons: ["Smooth CSS transitions without external canvas", "Full keyboard accessibility"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/interactive-hover-button.tsx",
+        content: `import React from "react";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export interface InteractiveHoverButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  text?: string;
+}
+
+export const InteractiveHoverButton = React.forwardRef<
+  HTMLButtonElement,
+  InteractiveHoverButtonProps
+>(({ text = "Button", className, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "group relative w-32 cursor-pointer overflow-hidden rounded-full border bg-background p-2 text-center font-semibold",
+        className
+      )}
+      {...props}
+    >
+      <span className="inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
+        {text}
+      </span>
+      <div className="absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:-translate-x-1 group-hover:opacity-100">
+        <span>{text}</span>
+        <ArrowRight className="size-4" />
+      </div>
+      <div className="absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-full bg-primary transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-primary" />
+    </button>
+  );
+});
+InteractiveHoverButton.displayName = "InteractiveHoverButton";
+export default InteractiveHoverButton;`,
+      },
+    ],
+  },
+
+  // 16. Magic UI / Rainbow Button
+  {
+    id: "@magic-ui/rainbow-button",
+    provenance: { provider: "Magic UI", sourceUrl: "https://magicui.design/docs/components/rainbow-button", license: "MIT" },
+    providerId: "magic-ui",
+    providerItemId: "rainbow-button",
+    name: "rainbow-button",
+    title: "Rainbow Button",
+    description: "A gorgeous animated button with an infinite cycling rainbow conic gradient border.",
+    type: "component",
+    categories: ["buttons", "effects", "animations"],
+    tags: ["button", "rainbow", "gradient", "border", "magic-ui", "tailwind"],
+    preview: {
+      demoUrl: "https://magicui.design/docs/components/rainbow-button",
+      image: "https://magicui.design/preview/rainbow-button.png",
+    },
+    source: {
+      homepage: "https://magicui.design",
+      registryUrl: "https://magicui.design/r/rainbow-button.json",
+      repository: "https://github.com/magicuidesign/magicui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @magic-ui/rainbow-button",
+    },
+    dependencies: [
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 96,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 15,
+        maintenance: 10,
+        documentation: 10,
+        performance: 10,
+        reasons: ["Conic gradient border animation", "Zero heavy JavaScript runtime"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/rainbow-button.tsx",
+        content: `import React from "react";
+import { cn } from "@/lib/utils";
+
+interface RainbowButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const RainbowButton = React.forwardRef<
+  HTMLButtonElement,
+  RainbowButtonProps
+>(({ children, className, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "group relative inline-flex h-11 animate-rainbow cursor-pointer items-center justify-center rounded-xl border-0 bg-[length:200%] px-8 py-2 font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        "before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))]",
+        "bg-[linear-gradient(#121212,#121212),linear-gradient(#121212_50%,rgba(18,18,18,0.6)_80%,rgba(18,18,18,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
+        "dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(255,255,255,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+});
+RainbowButton.displayName = "RainbowButton";
+export default RainbowButton;`,
+      },
+    ],
+  },
+
+  // 17. Aceternity UI / Moving Border Button
+  {
+    id: "@aceternity/moving-border-button",
+    provenance: { provider: "Aceternity UI", sourceUrl: "https://ui.aceternity.com/components/moving-border", license: "MIT" },
+    providerId: "aceternity",
+    providerItemId: "moving-border-button",
+    name: "moving-border-button",
+    title: "Moving Border Button",
+    description: "A futuristic button with an animated gradient light beam seamlessly traveling along the perimeter.",
+    type: "component",
+    categories: ["buttons", "effects", "animations"],
+    tags: ["button", "moving-border", "aceternity", "glow", "motion"],
+    preview: {
+      demoUrl: "https://ui.aceternity.com/components/moving-border",
+      image: "https://ui.aceternity.com/images/products/thumbnails/new/moving-border.png",
+    },
+    source: {
+      homepage: "https://ui.aceternity.com",
+      registryUrl: "https://ui.aceternity.com/r/moving-border.json",
+      repository: "https://github.com/aceternity/ui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @aceternity/moving-border",
+    },
+    dependencies: [
+      { name: "motion", version: "^12.0.0", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "motion",
+    },
+    quality: {
+      overall: 95,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 14,
+        maintenance: 10,
+        documentation: 10,
+        performance: 10,
+        reasons: ["SVG path beam motion tracking", "Custom duration and radius controls"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/moving-border.tsx",
+        content: `"use client";
+import React, { useRef } from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from "motion/react";
+import { cn } from "@/lib/utils";
+
+export function Button({
+  borderRadius = "1.75rem",
+  children,
+  as: Component = "button",
+  containerClassName,
+  borderClassName,
+  duration,
+  className,
+  ...otherProps
+}: any) {
+  return (
+    <Component
+      className={cn(
+        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2",
+        containerClassName
+      )}
+      style={{ borderRadius: borderRadius }}
+      {...otherProps}
+    >
+      <div
+        className="absolute inset-0"
+        style={{ borderRadius: \`calc(\${borderRadius} * 0.96)\` }}
+      >
+        <MovingBorder duration={duration} rx="30%" ry="30%">
+          <div
+            className={cn(
+              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--cyan-500)_40%,transparent_60%)]",
+              borderClassName
+            )}
+          />
+        </MovingBorder>
+      </div>
+      <div
+        className={cn(
+          "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
+          className
+        )}
+        style={{ borderRadius: \`calc(\${borderRadius} * 0.96)\` }}
+      >
+        {children}
+      </div>
+    </Component>
+  );
+}
+
+export const MovingBorder = ({
+  children,
+  duration = 3000,
+  rx,
+  ry,
+  ...otherProps
+}: any) => {
+  const pathRef = useRef<any>(null);
+  const progress = useMotionValue<number>(0);
+
+  useAnimationFrame((time) => {
+    const length = pathRef.current?.getTotalLength();
+    if (length) {
+      const pxPerMillisecond = length / duration;
+      progress.set((time * pxPerMillisecond) % length);
+    }
+  });
+
+  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).x);
+  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).y);
+  const transform = useMotionTemplate\`translateX(\${x}px) translateY(\${y}px) translateX(-50%) translateY(-50%)\`;
+
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        className="absolute h-full w-full"
+        width="100%"
+        height="100%"
+        {...otherProps}
+      >
+        <rect fill="none" width="100%" height="100%" rx={rx} ry={ry} ref={pathRef} />
+      </svg>
+      <motion.div
+        style={{ position: "absolute", top: 0, left: 0, display: "inline-block", transform }}
+      >
+        {children}
+      </motion.div>
+    </>
+  );
+};`,
+      },
+    ],
+  },
+
+  // 18. 21st / Glass Button
+  {
+    id: "@21st/glass-button",
+    provenance: { provider: "21st", sourceUrl: "https://21st.dev/components/glass-button", license: "MIT" },
+    providerId: "21st",
+    providerItemId: "glass-button",
+    name: "glass-button",
+    title: "Glassmorphic Button",
+    description: "Frosted glass acrylic button with backdrop blur, specular border highlight, and glowing hover state.",
+    type: "component",
+    categories: ["buttons", "effects", "glassmorphism"],
+    tags: ["button", "glass", "glassmorphism", "21st", "acrylic", "tailwind"],
+    preview: {
+      demoUrl: "https://21st.dev/components/glass-button",
+      image: "https://21st.dev/preview/glass-button.png",
+    },
+    source: {
+      homepage: "https://21st.dev",
+      registryUrl: "https://21st.dev/r/glass-button.json",
+      repository: "https://github.com/21st-dev/components",
+    },
+    install: {
+      mode: "cli",
+      command: "npx 21st@latest add glass-button",
+    },
+    dependencies: [
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 93,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 14,
+        accessibility: 14,
+        maintenance: 9,
+        documentation: 9,
+        performance: 10,
+        reasons: ["High-spec glass acrylic shader", "Zero dependencies beyond Tailwind"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/glass-button.tsx",
+        content: `import React from "react";
+import { cn } from "@/lib/utils";
+
+export interface GlassButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  glow?: boolean;
+}
+
+export const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
+  ({ className, glow = true, children, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          "relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white transition-all duration-300",
+          "rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]",
+          "hover:bg-white/20 hover:border-white/40 hover:scale-[1.02]",
+          "active:scale-[0.98]",
+          glow && "hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]",
+          className
+        )}
+        {...props}
+      >
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+        {children}
+      </button>
+    );
+  }
+);
+GlassButton.displayName = "GlassButton";
+export default GlassButton;`,
+      },
+    ],
+  },
+
+  // 19. Ruixen UI / Stack-Aware Button
+  {
+    id: "@ruixen/button",
+    provenance: { provider: "Ruixen UI", sourceUrl: "https://ruixen.com/components/button", license: "MIT" },
+    providerId: "ruixen",
+    providerItemId: "button",
+    name: "ruixen-button",
+    title: "Ruixen Multi-Stack Button",
+    description: "Adaptive component supporting automatic stack switching: Tailwind 4, Tailwind 3, Radix UI or Base UI.",
+    type: "component",
+    categories: ["buttons", "primitives"],
+    tags: ["button", "ruixen", "radix", "base-ui", "tailwind-v4", "tailwind-v3"],
+    preview: {
+      demoUrl: "https://ruixen.com/components/button",
+      image: "https://ruixen.com/preview/button.png",
+    },
+    source: {
+      homepage: "https://ruixen.com",
+      registryUrl: "https://ruixen.com/r/button.json",
+      repository: "https://github.com/ruixenui/ruixen",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add https://ruixen.com/r/button.json",
+    },
+    dependencies: [
+      { name: "@radix-ui/react-slot", version: "^1.1.0", isDev: false, peer: false },
+      { name: "class-variance-authority", version: "^0.7.1", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: ["radix", "base-ui"],
+      motion: "none",
+    },
+    quality: {
+      overall: 96,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 15,
+        maintenance: 10,
+        documentation: 10,
+        performance: 10,
+        reasons: ["Native support for Radix UI & Base UI", "Automatic Tailwind v3 and v4 variant routing"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/ruixen-button.tsx",
+        content: `import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        primary: "bg-cyan-500 text-black hover:bg-cyan-400 shadow-[0_0_20px_rgba(0,240,255,0.3)]",
+        secondary: "bg-neutral-800 text-white hover:bg-neutral-700 border border-white/10",
+        ghost: "hover:bg-white/10 text-neutral-300",
+      },
+      size: {
+        default: "h-10 px-5 py-2",
+        sm: "h-8 px-3 text-xs",
+        lg: "h-12 px-8 text-base",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "default",
+    },
+  }
+);
+
+export interface RuixenButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+export const RuixenButton = React.forwardRef<HTMLButtonElement, RuixenButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+    );
+  }
+);
+RuixenButton.displayName = "RuixenButton";
+export default RuixenButton;`,
+      },
+    ],
+  },
+
+  // 20. Cult UI / Gradient Button
+  {
+    id: "@cult-ui/gradient-button",
+    provenance: { provider: "Cult UI", sourceUrl: "https://cult-ui.com/docs/components/gradient-button", license: "MIT" },
+    providerId: "cult-ui",
+    providerItemId: "gradient-button",
+    name: "gradient-button",
+    title: "Gradient Button",
+    description: "Tactile, interactive fluid gradient button with animated border lighting.",
+    type: "component",
+    categories: ["buttons", "effects", "animations"],
+    tags: ["button", "gradient", "cult-ui", "creative", "tailwind"],
+    preview: {
+      demoUrl: "https://cult-ui.com/docs/components/gradient-button",
+      image: "https://cult-ui.com/preview/gradient-button.png",
+    },
+    source: {
+      homepage: "https://cult-ui.com",
+      registryUrl: "https://cult-ui.com/r/gradient-button.json",
+      repository: "https://github.com/cult-ui/cult-ui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @cult-ui/gradient-button",
+    },
+    dependencies: [
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 92,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 14,
+        accessibility: 13,
+        maintenance: 9,
+        documentation: 9,
+        performance: 10,
+        reasons: ["Smooth reactive gradients", "Touch-friendly haptic states"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/gradient-button.tsx",
+        content: `import React from "react";
+import { cn } from "@/lib/utils";
+
+export const GradientButton = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, children, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "relative group p-0.5 rounded-2xl bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]",
+        className
+      )}
+      {...props}
+    >
+      <div className="px-6 py-2.5 rounded-[14px] bg-neutral-950 text-white font-medium text-sm transition-all duration-300 group-hover:bg-transparent">
+        {children}
+      </div>
+    </button>
+  );
+});
+GradientButton.displayName = "GradientButton";
+export default GradientButton;`,
+      },
+    ],
+  },
+
+  // 21. Kokonut UI / Smooth Button
+  {
+    id: "@kokonut/smooth-button",
+    provenance: { provider: "Kokonut UI", sourceUrl: "https://kokonutui.com/docs/components/smooth-button", license: "MIT" },
+    providerId: "kokonut",
+    providerItemId: "smooth-button",
+    name: "smooth-button",
+    title: "Smooth Button",
+    description: "Minimalist tactile button with spring scale feedback and subtle dark-mode ambient border.",
+    type: "component",
+    categories: ["buttons", "micro-interactions"],
+    tags: ["button", "smooth", "kokonut", "minimal", "tailwind"],
+    preview: {
+      demoUrl: "https://kokonutui.com/docs/components/smooth-button",
+      image: "https://kokonutui.com/preview/smooth-button.png",
+    },
+    source: {
+      homepage: "https://kokonutui.com",
+      registryUrl: "https://kokonutui.com/r/smooth-button.json",
+      repository: "https://github.com/kokonut-ui/kokonut",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @kokonut/smooth-button",
+    },
+    dependencies: [
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "none",
+    },
+    quality: {
+      overall: 93,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 14,
+        accessibility: 14,
+        maintenance: 9,
+        documentation: 9,
+        performance: 10,
+        reasons: ["Zero overhead tactile feedback", "Dark mode first design"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/smooth-button.tsx",
+        content: `import React from "react";
+import { cn } from "@/lib/utils";
+
+export const SmoothButton = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, children, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-xl border border-white/10 bg-neutral-900 text-white shadow-sm transition-all duration-200 hover:bg-neutral-800 hover:border-white/20 active:scale-95",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+});
+SmoothButton.displayName = "SmoothButton";
+export default SmoothButton;`,
+      },
+    ],
+  },
+
+  // 22. React Bits / Magnet Button
+  {
+    id: "@react-bits/magnet-button",
+    provenance: { provider: "React Bits", sourceUrl: "https://reactbits.dev/components/magnet", license: "MIT" },
+    providerId: "react-bits",
+    providerItemId: "magnet-button",
+    name: "magnet-button",
+    title: "Magnetic Button",
+    description: "Interactive button with physical cursor magnet pull effect using smooth spring calculations.",
+    type: "component",
+    categories: ["buttons", "animations", "physics"],
+    tags: ["button", "magnetic", "react-bits", "physics", "spring"],
+    preview: {
+      demoUrl: "https://reactbits.dev/components/magnet",
+      image: "https://reactbits.dev/preview/magnet.png",
+    },
+    source: {
+      homepage: "https://reactbits.dev",
+      registryUrl: "https://reactbits.dev/r/magnet-button.json",
+      repository: "https://github.com/DavidHDev/react-bits",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @react-bits/magnet-button",
+    },
+    dependencies: [
+      { name: "motion", version: "^12.0.0", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "motion",
+    },
+    quality: {
+      overall: 94,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 14,
+        accessibility: 14,
+        maintenance: 10,
+        documentation: 9,
+        performance: 9,
+        reasons: ["Real-time spring physics tracking cursor distance", "Configurable magnetic radius"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/magnet-button.tsx",
+        content: `"use client";
+import React, { useRef, useState } from "react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+export interface MagnetButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  strength?: number;
+}
+
+export const MagnetButton = ({
+  children,
+  className,
+  strength = 30,
+  ...props
+}: MagnetButtonProps) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const { clientX, clientY } = e;
+    const { top, left, width, height } = ref.current.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * (strength / 100), y: middleY * (strength / 100) });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <motion.button
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={reset}
+      animate={{ x: position.x, y: position.y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      className={cn(
+        "px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm transition-colors hover:bg-neutral-200",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </motion.button>
+  );
+};
+export default MagnetButton;`,
+      },
+    ],
+  },
+
+  // 23. Magic UI / Hero Video Dialog
+  {
+    id: "@magic-ui/hero-video-dialog",
+    provenance: { provider: "Magic UI", sourceUrl: "https://magicui.design/docs/components/hero-video-dialog", license: "MIT" },
+    providerId: "magic-ui",
+    providerItemId: "hero-video-dialog",
+    name: "hero-video-dialog",
+    title: "Hero Video Dialog",
+    description: "A responsive SaaS hero video component with an interactive play button and full-screen video dialog modal.",
+    type: "block",
+    categories: ["hero", "video", "dialog", "media"],
+    tags: ["hero", "video", "dialog", "modal", "lightbox", "magic-ui"],
+    preview: {
+      demoUrl: "https://magicui.design/docs/components/hero-video-dialog",
+      image: "https://magicui.design/preview/hero-video-dialog.png",
+    },
+    source: {
+      homepage: "https://magicui.design",
+      registryUrl: "https://magicui.design/r/hero-video-dialog.json",
+      repository: "https://github.com/magicuidesign/magicui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @magic-ui/hero-video-dialog",
+    },
+    dependencies: [
+      { name: "lucide-react", version: "^0.468.0", isDev: false, peer: false },
+      { name: "motion", version: "^12.0.0", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "motion",
+    },
+    quality: {
+      overall: 96,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 15,
+        maintenance: 10,
+        documentation: 10,
+        performance: 9,
+        reasons: ["Smooth backdrop blur & spring entrance", "Auto-pause video on modal dismiss"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/hero-video-dialog.tsx",
+        content: `"use client";
+import React, { useState } from "react";
+import { Play, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { cn } from "@/lib/utils";
+
+export interface HeroVideoDialogProps {
+  videoSrc: string;
+  thumbnailSrc: string;
+  thumbnailAlt?: string;
+  className?: string;
+}
+
+export function HeroVideoDialog({
+  videoSrc,
+  thumbnailSrc,
+  thumbnailAlt = "Hero Video thumbnail",
+  className,
+}: HeroVideoDialogProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={cn("relative max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl", className)}>
+      <div className="relative group cursor-pointer" onClick={() => setIsOpen(true)}>
+        <img src={thumbnailSrc} alt={thumbnailAlt} className="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-cyan-500 text-black flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.6)] group-hover:scale-110 transition-transform">
+            <Play className="size-7 fill-current translate-x-0.5" />
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="relative w-full max-w-4xl aspect-video bg-neutral-950 rounded-2xl overflow-hidden border border-white/20" onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 z-10 p-2 text-white bg-neutral-800/80 rounded-full hover:bg-neutral-700 transition-colors">
+                <X className="size-5" />
+              </button>
+              <iframe src={videoSrc} className="w-full h-full" allow="autoplay; fullscreen" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+export default HeroVideoDialog;`,
+      },
+    ],
+  },
+
+  // 24. Aceternity UI / Lamp Hero
+  {
+    id: "@aceternity/lamp-hero",
+    provenance: { provider: "Aceternity UI", sourceUrl: "https://ui.aceternity.com/components/lamp-effect", license: "MIT" },
+    providerId: "aceternity",
+    providerItemId: "lamp-hero",
+    name: "lamp-hero",
+    title: "Lamp Hero Container",
+    description: "The signature Aceternity lamp hero section with radiant light beams, glowing particles and title animations.",
+    type: "block",
+    categories: ["hero", "effects", "animations"],
+    tags: ["hero", "lamp", "glow", "light", "aceternity", "motion"],
+    preview: {
+      demoUrl: "https://ui.aceternity.com/components/lamp-effect",
+      image: "https://ui.aceternity.com/images/products/thumbnails/new/lamp.png",
+    },
+    source: {
+      homepage: "https://ui.aceternity.com",
+      registryUrl: "https://ui.aceternity.com/r/lamp-effect.json",
+      repository: "https://github.com/aceternity/ui",
+    },
+    install: {
+      mode: "shadcn",
+      command: "npx shadcn@latest add @aceternity/lamp-effect",
+    },
+    dependencies: [
+      { name: "motion", version: "^12.0.0", isDev: false, peer: false },
+      { name: "clsx", version: "^2.1.1", isDev: false, peer: false },
+      { name: "tailwind-merge", version: "^2.5.4", isDev: false, peer: false },
+    ],
+    registryDependencies: [],
+    frameworkSupport: {
+      react: "^18 || ^19",
+      nextjs: true,
+      vite: true,
+      remix: true,
+      rsc: true,
+      tailwind: "any",
+      primitives: [],
+      motion: "motion",
+    },
+    quality: {
+      overall: 95,
+      breakdown: {
+        compatibility: 20,
+        codeQuality: 15,
+        accessibility: 14,
+        maintenance: 10,
+        documentation: 10,
+        performance: 9,
+        reasons: ["High-impact visual hero centerpiece", "GPU accelerated conical light projections"],
+        dependencyHealth: 10,
+        popularity: 5,
+        previewQuality: 5,
+        deductions: [],
+      },
+    },
+    license: "MIT",
+    auth: { required: false, type: "none" },
+    files: [
+      {
+        path: "components/ui/lamp.tsx",
+        content: `"use client";
+import React from "react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+export const LampContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "relative flex min-h-[500px] flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-2xl z-0",
+        className
+      )}
+    >
+      <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+        <motion.div
+          initial={{ opacity: 0.5, width: "15rem" }}
+          whileInView={{ opacity: 1, width: "30rem" }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          style={{
+            backgroundImage: \`conic-gradient(var(--conic-position), var(--tw-gradient-stops))\`,
+          }}
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-500 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+        >
+          <div className="absolute  w-[100%] left-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute  w-40 h-[100%] left-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0.5, width: "15rem" }}
+          whileInView={{ opacity: 1, width: "30rem" }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          style={{
+            backgroundImage: \`conic-gradient(var(--conic-position), var(--tw-gradient-stops))\`,
+          }}
+          className="absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-500 text-white [--conic-position:from_290deg_at_center_top]"
+        >
+          <div className="absolute  w-40 h-[100%] right-0 bg-neutral-950  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute  w-[100%] right-0 bg-neutral-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+        </motion.div>
+        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-neutral-950 blur-2xl"></div>
+        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+        <motion.div
+          initial={{ width: "8rem" }}
+          whileInView={{ width: "16rem" }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
+        ></motion.div>
+        <motion.div
+          initial={{ width: "15rem" }}
+          whileInView={{ width: "30rem" }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
+        ></motion.div>
+
+        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-950 "></div>
+      </div>
+
+      <div className="relative z-50 flex -translate-y-28 flex-col items-center px-5">
+        {children}
+      </div>
+    </div>
+  );
+};
+export default LampContainer;`,
+      },
+    ],
+  },
 ];
+

@@ -181,6 +181,11 @@ export const ProviderMetadataSchema = z.object({
   componentCount: z.number().default(0),
   variants: z.array(z.string()).default([]),
   prerequisites: z.array(z.string()).default([]),
+  searchMethod: z.string().optional(),
+  searchEndpoint: z.string().optional(),
+  installCommandTemplate: z.string().optional(),
+  supportedStacks: z.array(z.string()).default([]),
+  features: z.array(z.string()).default([]),
 });
 export type ProviderMetadata = z.infer<typeof ProviderMetadataSchema>;
 

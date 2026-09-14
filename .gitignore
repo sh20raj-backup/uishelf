@@ -10,3 +10,4 @@ uishelf.lock
 .env
 .env.local
 .env.*.local
+scratch/

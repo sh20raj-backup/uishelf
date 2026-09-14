@@ -34,7 +34,17 @@ export function resolveInstallPlan(options: ResolvePlanOptions): InstallPlan {
   const plannedFiles: PlannedFile[] = [];
   const conflicts: ComponentConflict[] = [];
 
-  for (const file of resolvedComponent.files || []) {
+  const filesToProcess =
+    resolvedComponent.files && resolvedComponent.files.length > 0
+      ? resolvedComponent.files
+      : [
+          {
+            path: `${resolvedComponent.name.toLowerCase().replace(/[^a-z0-9_-]/g, "-")}.tsx`,
+            content: generateComponentAdapter(resolvedComponent),
+          },
+        ];
+
+  for (const file of filesToProcess) {
     let fileName = path.basename(file.path);
     if (!fileName.endsWith(".tsx") && !fileName.endsWith(".ts") && !fileName.endsWith(".jsx")) {
       fileName = `${resolvedComponent.name}.tsx`;
@@ -193,4 +203,51 @@ function toPascalCase(str: string): string {
     .split(/[-_]/)
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join("");
+}
+
+function generateComponentAdapter(comp: UIShelfComponent): string {
+  const compName = toPascalCase(comp.name);
+  if (comp.providerId === "mui") {
+    return `"use client";
+import React from "react";
+import Button, { ButtonProps } from "@mui/material/Button";
+
+export { Button, type ButtonProps };
+export default Button;
+`;
+  }
+  if (comp.providerId === "mantine") {
+    return `"use client";
+import React from "react";
+import { Button, type ButtonProps } from "@mantine/core";
+
+export { Button, type ButtonProps };
+export default Button;
+`;
+  }
+  if (comp.providerId === "chakra") {
+    return `"use client";
+import React from "react";
+import { Button, type ButtonProps } from "@chakra-ui/react";
+
+export { Button, type ButtonProps };
+export default Button;
+`;
+  }
+  return `"use client";
+import React from "react";
+
+export interface ${compName}Props extends React.HTMLAttributes<HTMLDivElement> {}
+
+export function ${compName}(props: ${compName}Props) {
+  return (
+    <div {...props} className="p-4 rounded-xl border border-white/10 bg-neutral-900 text-white">
+      <h3 className="font-semibold text-sm">${comp.title}</h3>
+      <p className="text-xs text-neutral-400 mt-1">${comp.description}</p>
+    </div>
+  );
+}
+
+export default ${compName};
+`;
 }

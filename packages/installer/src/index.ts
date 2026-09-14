@@ -41,7 +41,35 @@ export async function executeInstall(options: ExecuteInstallOptions): Promise<In
     // 1. Prepare backup directory
     fs.mkdirSync(backupDir, { recursive: true });
 
-    // 2. Write/Update files
+    // 2. Try executing the upstream provider's native command in the background if available
+    let nativeCommandExecuted = false;
+    const upstreamCommand = component.install?.command;
+    const pm = project.packageManager || "npm";
+
+    if (upstreamCommand && (component.install.mode === "shadcn" || component.install.mode === "cli")) {
+      let bgCmd = upstreamCommand;
+      // Adapt runner to project's package manager
+      if (pm === "pnpm") {
+        bgCmd = bgCmd.replace(/^npx\s+/, "pnpm dlx ");
+      } else if (pm === "bun") {
+        bgCmd = bgCmd.replace(/^npx\s+/, "bunx --bun ");
+      }
+
+      try {
+        execSync(bgCmd, {
+          cwd: project.workspaceDir,
+          stdio: "pipe",
+          timeout: 45000,
+        });
+        nativeCommandExecuted = true;
+      } catch (cmdErr: any) {
+        // If native CLI command fails (e.g. no components.json configured or network hitch),
+        // gracefully fall back to UIShelf's transactional file writing & dependency installation.
+        nativeCommandExecuted = false;
+      }
+    }
+
+    // 3. Write/Update files (if native command didn't handle it, or to guarantee file contents)
     for (const file of files) {
       const pathCheck = validateSafePath(file.path, project.workspaceDir);
       if (!pathCheck.safe) {
@@ -50,6 +78,11 @@ export async function executeInstall(options: ExecuteInstallOptions): Promise<In
 
       const absPath = pathCheck.resolvedPath;
       const fileDir = path.dirname(absPath);
+
+      // If file already exists and native command succeeded, don't overwrite if content is empty
+      if (fs.existsSync(absPath) && nativeCommandExecuted && !file.content) {
+        continue;
+      }
 
       if (fs.existsSync(absPath)) {
         // Backup existing
@@ -64,18 +97,31 @@ export async function executeInstall(options: ExecuteInstallOptions): Promise<In
         fs.mkdirSync(fileDir, { recursive: true });
       }
 
-      fs.writeFileSync(absPath, file.content, "utf-8");
+      if (file.content) {
+        fs.writeFileSync(absPath, file.content, "utf-8");
+      }
     }
 
-    // 3. Install NPM Dependencies
+    // 4. Install NPM Dependencies
     const installedPackages: string[] = [];
-    if (!skipDependencies && npmPackages.length > 0) {
+    if (!skipDependencies && npmPackages.length > 0 && !nativeCommandExecuted) {
       const pkgNames = npmPackages.map((p) => p.name).join(" ");
-      const pm = project.packageManager || "npm";
+
+      const isPnpmWorkspace = fs.existsSync(path.join(project.workspaceDir, "pnpm-workspace.yaml"));
+      let isYarnWorkspace = false;
+      try {
+        const pkgJsonPath = path.join(project.workspaceDir, "package.json");
+        if (fs.existsSync(pkgJsonPath)) {
+          const pkg = JSON.parse(fs.readFileSync(pkgJsonPath, "utf-8"));
+          isYarnWorkspace = !!pkg.workspaces;
+        }
+      } catch {
+        // ignore
+      }
 
       let cmd = "";
-      if (pm === "pnpm") cmd = `pnpm add ${pkgNames}`;
-      else if (pm === "yarn") cmd = `yarn add ${pkgNames}`;
+      if (pm === "pnpm") cmd = isPnpmWorkspace ? `pnpm add -w ${pkgNames}` : `pnpm add ${pkgNames}`;
+      else if (pm === "yarn") cmd = isYarnWorkspace ? `yarn add -W ${pkgNames}` : `yarn add ${pkgNames}`;
       else if (pm === "bun") cmd = `bun add ${pkgNames}`;
       else cmd = `npm install ${pkgNames}`;
 
@@ -83,12 +129,22 @@ export async function executeInstall(options: ExecuteInstallOptions): Promise<In
         execSync(cmd, { cwd: project.workspaceDir, stdio: "pipe" });
         installedPackages.push(...npmPackages.map((p) => p.name));
       } catch (err: any) {
-        // Non-fatal warning if network fails, or throw if needed
-        console.warn(`[UIShelf] Package install warning: ${err.message}`);
+        try {
+          if (pm === "pnpm" && !cmd.includes("-w")) {
+            execSync(`pnpm add -w ${pkgNames}`, { cwd: project.workspaceDir, stdio: "pipe" });
+            installedPackages.push(...npmPackages.map((p) => p.name));
+          } else {
+            console.warn(`[UIShelf] Package install notice: ${err.message}`);
+          }
+        } catch (retryErr: any) {
+          console.warn(`[UIShelf] Package install notice: ${retryErr.message}`);
+        }
       }
+    } else if (nativeCommandExecuted) {
+      installedPackages.push(...npmPackages.map((p) => p.name));
     }
 
-    // 4. Update uishelf.lock
+    // 5. Update uishelf.lock
     updateLockfile(project.workspaceDir, plan);
 
     // Clean up backup directory on success

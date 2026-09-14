@@ -52,18 +52,49 @@ export default function LibrariesPage() {
                   {p.description}
                 </p>
 
-                {/* Capabilities Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-4 text-[11px]">
-                  <span className="bg-neutral-900 border border-white/5 text-neutral-300 px-2 py-0.5 rounded">
-                    Type: {p.type}
-                  </span>
-                  <span className="bg-neutral-900 border border-white/5 text-neutral-300 px-2 py-0.5 rounded">
-                    Auth: {p.authRequired ? "🔐 Required" : "✓ Public"}
-                  </span>
-                  <span className="bg-neutral-900 border border-white/5 text-neutral-300 px-2 py-0.5 rounded">
-                    Items: ~{p.componentCount}+
-                  </span>
+                {/* Search & Install Architecture */}
+                <div className="space-y-2 mb-4 bg-black/40 border border-white/5 p-3 rounded-xl">
+                  {p.searchMethod && (
+                    <div className="text-[11px]">
+                      <span className="text-neutral-500 font-mono">Search Schema: </span>
+                      <span className="text-cyan-400 font-mono">{p.searchMethod}</span>
+                    </div>
+                  )}
+                  {p.installCommandTemplate && (
+                    <div className="text-[11px]">
+                      <span className="text-neutral-500 font-mono">Background CMD: </span>
+                      <code className="text-yellow-400 font-mono text-[10px] break-all">{p.installCommandTemplate}</code>
+                    </div>
+                  )}
                 </div>
+
+                {/* Stacks Badges */}
+                {p.supportedStacks && p.supportedStacks.length > 0 && (
+                  <div className="mb-3">
+                    <div className="text-[10px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">Stacks</div>
+                    <div className="flex flex-wrap gap-1">
+                      {p.supportedStacks.map((st) => (
+                        <span key={st} className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded">
+                          {st}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Features */}
+                {p.features && p.features.length > 0 && (
+                  <div className="mb-4">
+                    <div className="text-[10px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">Capabilities</div>
+                    <div className="flex flex-wrap gap-1">
+                      {p.features.map((feat) => (
+                        <span key={feat} className="text-[10px] bg-purple-500/10 text-purple-300 border border-purple-500/20 px-1.5 py-0.5 rounded">
+                          {feat}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Prerequisites */}
                 {p.prerequisites && p.prerequisites.length > 0 && (

@@ -38,16 +38,37 @@ export abstract class BaseProvider implements UIShelfProvider {
   }
 
   async search(query: SearchQuery): Promise<UIShelfComponent[]> {
-    const items = await this.list();
     const q = (query.query || "").toLowerCase();
-    if (!q) return items;
-    return items.filter(
-      (c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.title.toLowerCase().includes(q) ||
-        c.description.toLowerCase().includes(q) ||
-        c.tags.some((t) => t.toLowerCase().includes(q))
-    );
+
+    // 1. Dynamic remote proxy search
+    let remoteItems: UIShelfComponent[] = [];
+    try {
+      remoteItems = await registryManager.searchRemoteRegistry(this.metadata, q);
+    } catch {
+      // Remote failures fall back to local
+    }
+
+    // 2. Local seed/cached items for this provider
+    const localItems = await this.list();
+    const filteredLocal = !q
+      ? localItems
+      : localItems.filter(
+          (c) =>
+            c.name.toLowerCase().includes(q) ||
+            c.title.toLowerCase().includes(q) ||
+            c.description.toLowerCase().includes(q) ||
+            c.tags.some((t) => t.toLowerCase().includes(q))
+        );
+
+    // 3. Merge and deduplicate by component id
+    const combined = [...remoteItems, ...filteredLocal];
+    const map = new Map<string, UIShelfComponent>();
+    for (const item of combined) {
+      if (!map.has(item.id)) {
+        map.set(item.id, item);
+      }
+    }
+    return Array.from(map.values());
   }
 
   async get(id: string): Promise<UIShelfComponent | null> {
@@ -281,6 +302,11 @@ export class ProviderManager {
       componentCount: 0,
       variants: [],
       prerequisites: [],
+      searchMethod: "Remote Registry Index (JSON)",
+      searchEndpoint: registryUrl,
+      installCommandTemplate: `npx shadcn@latest add "${registryUrl}" --yes`,
+      supportedStacks: ["Tailwind CSS", "React 19"],
+      features: ["Custom community registry"],
     };
 
     this.register(new CustomRegistryProvider(metadata));
