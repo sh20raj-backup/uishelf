@@ -7,6 +7,27 @@
   "bin": {
     "uishelf": "./dist/bin.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SH20RAJ/uishelf.git",
+    "directory": "packages/cli"
+  },
+  "author": "Shaswat Raj",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "ui",
+    "registry",
+    "shadcn",
+    "components",
+    "mcp",
+    "model-context-protocol",
+    "installer",
+    "cli"
+  ],
   "scripts": {
     "build": "tsc && chmod +x dist/bin.js"
   },

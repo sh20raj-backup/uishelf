@@ -1,8 +1,19 @@
 {
   "name": "@uishelf/schema",
   "version": "0.1.0",
+  "description": "Canonical Zod schemas and TypeScript types for UIShelf",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SH20RAJ/uishelf.git",
+    "directory": "packages/schema"
+  },
+  "author": "Shaswat Raj",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
