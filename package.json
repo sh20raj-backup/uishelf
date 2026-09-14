@@ -1,0 +1,24 @@
+{
+  "name": "uishelf-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Universal React UI Registry, CLI, Search Engine & MCP Platform",
+  "scripts": {
+    "build": "pnpm -r --filter=!@uishelf/web run build",
+    "build:all": "pnpm -r run build",
+    "dev": "pnpm --filter @uishelf/web dev",
+    "test": "vitest run",
+    "typecheck": "tsc -b",
+    "lint": "echo 'Checking lint...'",
+    "cli": "node packages/cli/dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "pnpm@11.8.0",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}
