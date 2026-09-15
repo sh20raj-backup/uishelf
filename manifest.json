@@ -1,0 +1,16 @@
+{
+  "name": "UIShelf — Universal React UI Registry & Discovery Engine",
+  "short_name": "UIShelf",
+  "description": "The resolution layer between developers and the React UI ecosystem. Search 340+ registries, inspect compatibility, resolve dependencies, and safely install UI components.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#08080a",
+  "theme_color": "#00f0ff",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
