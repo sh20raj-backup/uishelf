@@ -1,5 +1,39 @@
 import React from "react";
+import type { Metadata } from "next";
 import { BookOpen, Layers, ShieldCheck, Terminal, Cpu } from "lucide-react";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Architecture & Documentation — UIShelf Core & Registry Engine",
+  description:
+    "Deep dive into the architecture of UIShelf: core orchestration, provider adapters, AST transformation, security audits, compatibility resolver, and lockfile specifications.",
+  keywords: [
+    "uishelf architecture",
+    "react registry specification",
+    "shadcn registry schema",
+    "ui package security audit",
+    "uishelf technical documentation",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/docs/"),
+  },
+  openGraph: {
+    title: "Architecture & Documentation | UIShelf",
+    description:
+      "Deep dive into the architecture of UIShelf: core orchestration, provider adapters, and AST transformation.",
+    url: getCanonicalUrl("/docs/"),
+    siteName: "UIShelf",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "UIShelf Architecture Documentation" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Architecture & Documentation | UIShelf",
+    description: "Deep dive into the architecture of UIShelf Core and Registry Engine.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function DocsPage() {
   return (

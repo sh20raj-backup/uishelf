@@ -1,7 +1,43 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink, Check, ShieldCheck, Sparkles, Layers, ArrowRight } from "lucide-react";
 import { CURATED_PROVIDERS } from "@uishelf/registry/seed";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Supported React UI Registries & Providers Directory",
+  description:
+    "Explore 340+ supported React UI providers and registries including shadcn/ui, Magic UI, Aceternity UI, 21st.dev, React Bits, Cult UI, ReUI, MUI, Mantine, and Chakra UI.",
+  keywords: [
+    "react ui providers",
+    "shadcn registry directory",
+    "magic ui registry",
+    "aceternity ui registry",
+    "21st dev registry",
+    "react ui libraries list",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/libraries/"),
+  },
+  openGraph: {
+    title: "Supported React UI Registries & Providers Directory | UIShelf",
+    description:
+      "Explore 340+ supported React UI providers and registries including shadcn/ui, Magic UI, Aceternity UI, 21st.dev, and NPM libraries.",
+    url: getCanonicalUrl("/libraries/"),
+    siteName: "UIShelf",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "UIShelf Providers Directory" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Supported React UI Registries & Providers Directory | UIShelf",
+    description:
+      "Explore 340+ supported React UI providers and registries with native compatibility support.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function LibrariesPage() {
   return (

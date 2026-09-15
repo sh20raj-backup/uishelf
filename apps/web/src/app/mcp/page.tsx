@@ -1,5 +1,42 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Sparkles, Terminal, ShieldCheck, Cpu, Code2, Copy } from "lucide-react";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "Model Context Protocol (MCP) Server for React UI Discovery",
+  description:
+    "Empower AI agents in Cursor, Claude Desktop, Antigravity, and Windsurf to search 340+ React UI registries, inspect project stacks, and calculate safe install plans via UIShelf MCP.",
+  keywords: [
+    "uishelf mcp",
+    "mcp server react",
+    "model context protocol ui",
+    "claude desktop ui components",
+    "cursor mcp server react",
+    "ai ui generator",
+    "ai coding assistant ui",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/mcp/"),
+  },
+  openGraph: {
+    title: "Model Context Protocol (MCP) Server for React UI Discovery | UIShelf",
+    description:
+      "Connect Claude Desktop, Cursor, and AI agents to the entire React UI ecosystem via UIShelf MCP.",
+    url: getCanonicalUrl("/mcp/"),
+    siteName: "UIShelf",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "UIShelf MCP Server" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Model Context Protocol (MCP) Server for React UI Discovery | UIShelf",
+    description:
+      "Allow Cursor, Claude Desktop, and AI agents to discover and install React components safely.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function McpPage() {
   const mcpConfig = `{

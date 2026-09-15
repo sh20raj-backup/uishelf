@@ -1,5 +1,40 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Terminal, Copy, Check, ShieldCheck } from "lucide-react";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "UIShelf CLI Reference — Interactive Developer Terminal & Automation",
+  description:
+    "Complete CLI documentation for UIShelf: search, add, inspect, doctor, verify, audit, and providers commands with transactional rollbacks, dry-run mode, and --json output.",
+  keywords: [
+    "uishelf cli",
+    "shadcn cli alternative",
+    "react component cli",
+    "uishelf add command",
+    "ui package installer cli",
+    "uishelf doctor",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/cli/"),
+  },
+  openGraph: {
+    title: "UIShelf CLI Reference | Developer Command Line Tool",
+    description:
+      "Search and install React UI components with transactional safety, lockfiles, and AST inspection.",
+    url: getCanonicalUrl("/cli/"),
+    siteName: "UIShelf",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "UIShelf CLI Reference" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UIShelf CLI Reference | Developer Command Line Tool",
+    description: "Scriptable, safe, and lightning fast UI component installation from your terminal.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function CliPage() {
   const commands = [

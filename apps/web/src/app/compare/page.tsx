@@ -1,6 +1,43 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, Shield, ArrowRight } from "lucide-react";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "React UI Library Comparison — shadcn vs Magic UI vs Aceternity vs MUI vs Mantine",
+  description:
+    "Comprehensive comparison matrix of React UI component libraries: shadcn/ui, Magic UI, Aceternity UI, 21st.dev, React Bits, MUI, Mantine, and Chakra UI. Compare Tailwind v4 support, React 19 readiness, and MCP compatibility.",
+  keywords: [
+    "shadcn vs mui",
+    "shadcn vs magic ui",
+    "aceternity ui vs shadcn",
+    "react ui comparison",
+    "best react component library 2026",
+    "tailwind v4 component libraries",
+    "react 19 ui libraries",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/compare/"),
+  },
+  openGraph: {
+    title: "React UI Library Comparison Matrix | UIShelf",
+    description:
+      "Compare shadcn/ui, Magic UI, Aceternity, 21st.dev, MUI, Mantine, and Chakra UI across Tailwind v4, React 19, and MCP support.",
+    url: getCanonicalUrl("/compare/"),
+    siteName: "UIShelf",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "React UI Comparison Matrix" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "React UI Library Comparison Matrix | UIShelf",
+    description:
+      "Compare shadcn/ui, Magic UI, Aceternity, 21st.dev, MUI, Mantine, and Chakra UI across architecture and tech stacks.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function ComparePage() {
   const providers = [

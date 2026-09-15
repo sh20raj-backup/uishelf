@@ -1,7 +1,50 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SEED_COMPONENTS } from "@uishelf/registry/seed";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { getCanonicalUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: "React UI Components Catalog — Categorized Primitives & SaaS Sections",
+  description:
+    "Explore curated React UI components across Pricing Sections, Interactive Cards, Animated Typography, Sliders, and UI Primitives. Safe installation via UIShelf CLI.",
+  keywords: [
+    "react component catalog",
+    "pricing table react",
+    "card component react",
+    "animated typography react",
+    "react ui primitives",
+    "shadcn catalog",
+  ],
+  alternates: {
+    canonical: getCanonicalUrl("/components/"),
+  },
+  openGraph: {
+    title: "React UI Components Catalog | UIShelf",
+    description:
+      "Explore curated React UI components across Pricing Sections, Interactive Cards, Animated Typography, Sliders, and UI Primitives.",
+    url: getCanonicalUrl("/components/"),
+    siteName: "UIShelf",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "UIShelf Component Catalog",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "React UI Components Catalog | UIShelf",
+    description:
+      "Explore curated React UI components across Pricing Sections, Interactive Cards, Animated Typography, Sliders, and UI Primitives.",
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@shaswatraj",
+  },
+};
 
 export default function ComponentsDirectoryPage() {
   const categories = [
